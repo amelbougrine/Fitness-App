@@ -1,0 +1,193 @@
+/* Base styles */
+@import url("https://fonts.googleapis.com/css2?family=Nunito:wght@300;400&display=swap");
+
+:root {
+  --light-blue: #EAECF3;
+  --gray: #f0f0f0;
+  --main-color: #42515c;
+  --text-color: #ecebf4;
+  --dark-text-color: #1e272e;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Nunito', sans-serif;
+  background-color: #a3a2a2;
+  color: var(--text-color);
+  height: 100vh;
+  overflow: hidden;
+  background-image: url("fitness2.jpg");
+  background-position: center;
+}
+
+/* App styles */
+
+.app {
+  overflowY: hidden;
+  width: 299px;
+  height: 637px;
+  position: sticky;
+  margin: 0 auto;
+  top: 20px;  
+  border-radius: 24px;
+  background-color: #fafafa;
+  display: flex;
+  flex-direction: column;
+}
+
+.main-container {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: row;
+}
+/* Header */
+
+.header {
+  width: 100%;
+  height: 40px;
+}
+.top-header {
+  background-color: #1e272e;
+  width: 40%;
+  height: 12px;
+  margin: 0 auto;
+  margin-bottom: 28px;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+}
+.vertical-line {
+  width: 0.5rem;
+  height: 88%;
+  background-color: #fafafa;
+}
+/* container */
+h2 {
+  font-size: 2.75rem;
+  font-weight: 300;
+  margin: 0.625rem;
+  z-index: 1;
+}
+
+h2 span {
+  font-size: 1.8rem;
+}
+
+p {
+  z-index: 1;
+  font-size: 1.2rem;
+  margin-top: 0;
+}
+.small-text {
+  font-size: 1.75rem;
+}
+
+p > span {
+  font-size: 2.5rem;
+}
+.container i {
+  font-size: 2rem;
+}
+
+.container {
+  background-color: var(--main-color);
+  width: 100%;
+  height: 88%;
+  overflow-y: scroll;
+  margin: 0 auto;
+  /* padding: 0 0.5rem; */
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  /* grid-template-columns: 1fr 1fr; */
+  gap: 10px;
+  overflow-x: hidden;
+}
+.container::-webkit-scrollbar {
+  width: 0;  
+  background: transparent;  
+}
+.container::-webkit-scrollbar-thumb {
+  background: #FF0000;
+}
+
+.container > div {
+  position: relative;
+  cursor: pointer;
+  width: 100%;
+  height: 180px;
+  background-size: cover;
+  background-attachment: fixed;
+  transition: all 0.3s ease-out;
+}
+.darkDiv, .text {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+.darkDiv {
+  background-color: #000;
+  opacity: 0.1;
+}
+.bg2 .darkDiv{
+  opacity: 0.1;
+}
+.text {
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+.container > div:hover {
+  transform: scale(0.98);
+}
+.container > .bg1:hover .darkDiv{
+  opacity: 0.4;
+}
+.container > .bg2:hover .darkDiv{
+  opacity: 0;
+}
+
+
+.bg1 {
+  background-image: url("fitness.jpg");
+  background-position: 0 50px;
+  text-shadow: 1px 1px 2px var(--main-color);
+}
+
+.bg2 {
+ background: var(--text-color) url("bg2.png");
+  color: var(--dark-text-color);
+  text-shadow: 0 1px 0 rgba(255, 255, 255, 0.4);
+}
+
+.container > div:first-of-type,
+.container > div:nth-of-type(6),
+.container > div:nth-of-type(9),
+.container > div:nth-of-type(10) {
+  grid-column: span 4;
+}
+.container > div:nth-of-type(2),
+.container > div:nth-of-type(3),
+.container > div:nth-of-type(4),
+.container > div:nth-of-type(5),
+.container > div:nth-of-type(7),
+.container > div:nth-of-type(8),
+.container > div:nth-of-type(11),
+.container > div:nth-of-type(12)   {
+  grid-column: span 2;
+}
+
+
+/* @media (min-width: 768px) {
+  .container {
+    grid-template-columns: repeat(4, 1fr);
+  }
+} */
